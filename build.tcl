@@ -7,11 +7,22 @@ set fileurl "http://www.bawt.tcl3d.org/download/InputLibs/tcl3d-0.9.1.7z"
 set var [list wget $fileurl -O $base.7z]
 exec >@stdout 2>@stderr {*}$var
 
-set var2 [list 7z x $base.7z]
-exec >@stdout 2>@stderr {*}$var2
+set useArchive 1
+if {[catch {package require archive} errMsg] == 1} {
+    puts $errMsg
+    set useArchive 0
+}
 
-set var2 [list tar czvf $base.tar.gz $base]
-exec >@stdout 2>@stderr {*}$var2
+if {$useArchive==1} {
+    archive::extract $base.7z all all 1
+    archive::create $base.tar.gz gzip ustar $base
+} else {
+    set var2 [list 7z x $base.7z]
+    exec >@stdout 2>@stderr {*}$var2
+
+    set var2 [list tar czvf $base.tar.gz $base]
+    exec >@stdout 2>@stderr {*}$var2
+}
 
 file delete -force $base.7z
 file delete -force $base
