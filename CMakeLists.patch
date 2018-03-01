@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2018-03-01 20:05:01.180540636 +0800
++++ CMakeLists.txt	2018-03-01 20:05:53.012749899 +0800
+@@ -77,7 +77,7 @@
+     -I${CMAKE_SOURCE_DIR}/swigfiles
+ )
+ 
+-SET( TCL3D_INST_DIR lib/tcl3d${TCL3D_VERSION} )
++SET( TCL3D_INST_DIR /usr/lib64/tcl/tcl3d${TCL3D_VERSION} )
+ 
+ # Set option "CMAKE_INSTALL_PREFIX", if option was not explicitly set by user.
+ IF( CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT )

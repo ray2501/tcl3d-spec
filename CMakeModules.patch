@@ -1,0 +1,15 @@
+--- CMakeModules/Macros.cmake.orig	2018-03-01 22:45:13.562966256 +0800
++++ CMakeModules/Macros.cmake	2018-03-01 22:45:42.830997424 +0800
+@@ -19,6 +19,12 @@
+             FILES_MATCHING PATTERN ${PATTERN}
+         )
+ 
++        INSTALL(
++            FILES ${CMAKE_CURRENT_BINARY_DIR}/pkgIndex.Release.tcl
++            DESTINATION ${TCL3D_INST_DIR}/${TARGET}
++            RENAME pkgIndex.tcl
++        )
++
+         # Install the configuration specific Tcl package index file.
+         INSTALL(
+             FILES ${CMAKE_CURRENT_BINARY_DIR}/pkgIndex.Debug.tcl
