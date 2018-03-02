@@ -15,7 +15,7 @@ if {[catch {package require archive} errMsg] == 1} {
 
 if {$useArchive==1} {
     archive::extract $base.7z all all 1
-    archive::create $base.tar.gz gzip ustar $base
+    archive::create $base.tar.gz gzip ustar [list $base]
 } else {
     set var2 [list 7z x $base.7z]
     exec >@stdout 2>@stderr {*}$var2
