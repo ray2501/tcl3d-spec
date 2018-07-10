@@ -17,7 +17,7 @@ Requires:       tcl >= 8.5
 Requires:       tk >= 8.5
 License:        BSD 3-Clause
 Group:          Development/Libraries/Tcl
-Version:        0.9.1
+Version:        0.9.2
 Release:        0
 Summary:        3D functionality of OpenGL and other 3D libraries for Tcl
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
