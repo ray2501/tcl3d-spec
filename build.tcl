@@ -1,8 +1,8 @@
 #!/usr/bin/tclsh
 
 set arch "x86_64"
-set base "tcl3d-0.9.3"
-set fileurl "http://www.bawt.tcl3d.org/download/InputLibs/tcl3d-0.9.3.7z"
+set base "tcl3d-0.9.4"
+set fileurl "http://www.bawt.tcl3d.org/download/InputLibs/tcl3d-0.9.4.7z"
 
 set var [list wget $fileurl -O $base.7z]
 exec >@stdout 2>@stderr {*}$var
