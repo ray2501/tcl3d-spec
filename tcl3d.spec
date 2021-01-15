@@ -15,7 +15,7 @@ BuildRequires:  glu-devel
 BuildRequires:  libXrandr-devel
 Requires:       tcl >= 8.5
 Requires:       tk >= 8.5
-License:        BSD 3-Clause
+License:        BSD-3-Clause
 Group:          Development/Libraries/Tcl
 Version:        0.9.4
 Release:        0
